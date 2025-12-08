@@ -4,7 +4,7 @@ function quemfez() {
 quemfez();
 
 // pega as 9 posições do tabuleiro 
-const divs = document.querySelectorAll(".div1");
+const divs = document.querySelectorAll(".div2");
 
 // jogador inicial
 let vezdojogador = "X";
@@ -24,10 +24,12 @@ const listaVitorias = [
 // adiciona evento de clique para cada posição/div
 divs.forEach((div, index) => {
     div.addEventListener("click", () => {
+        console.log("teste teste")
 
         if (div.textContent === "") {
 
-            div.textContent = vezdojogador;
+            divs.textContent = vezdojogador;
+            divs.style.color= "purple";
 
             // verifica se ganhou ou nao
             if (veriqueVitoria(vezdojogador)) {
