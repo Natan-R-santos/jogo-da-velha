@@ -1,21 +1,49 @@
-function quemfez(){
-    alert("feito por natan");
+function quemfez() {
+    alert("Feito por Natan RCS!");
 }
 quemfez();
 
-// pega os elementos com query selector todas as classes com o nome divs1
+// pega as 9 posições do tabuleiro 
 const divs = document.querySelectorAll(".divs1");
-// variavel que contem o jogador da vez 
+
+// jogador inicial
 let vezdojogador = "X";
-// usamos o foreach para percorrer as 9 divs e colocamos o evento de click,caso esteja vazio coloca qual é o jogador pela variavel
-// ai caso for a vez do X alteramos a vez do jogador vezdojogador = (vezdojogador === "X") ? "O" : "X"; caso for o bolinha troca para o X e vice versa
-divs.forEach(divs => {
-    divs.addEventListener("click", () => {
-        if(divs.textContent ===""){
-            divs.textContent = vezdojogador;
+
+// combinações de vitorias vencedoras
+const listaVitorias = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+];
+
+// adiciona evento de clique para cada posição/div
+divs.forEach((div, index) => {
+    div.addEventListener("click", () => {
+
+        if (div.textContent === "") {
+
+            div.textContent = vezdojogador;
+
+            // verifica se ganhou ou nao
+            if (veriqueVitoria(vezdojogador)) {
+                alert(`Jogador ${vezdojogador} venceu!`);
+                return;
+            }
+
+            // troca jogador
             vezdojogador = (vezdojogador === "X") ? "O" : "X";
         }
     });
 });
 
-
+// função para verificar vitórias 
+function veriqueVitoria(jogador) {
+    return listaVitorias.some(comb => {
+        return comb.every(pos => divs[pos].textContent === jogador);
+    });
+};
