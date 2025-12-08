@@ -4,7 +4,7 @@ function quemfez() {
 quemfez();
 
 // pega as 9 posições do tabuleiro 
-const divs = document.querySelectorAll(".divs1");
+const divs = document.querySelectorAll(".div1");
 
 // jogador inicial
 let vezdojogador = "X";
