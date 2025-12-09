@@ -1,8 +1,11 @@
-/* Fundo geral */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
 body {
     background-color: #2C3E50;
     color: #ECF0F1;
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -10,28 +13,19 @@ body {
     align-items: center;
     height: 100vh;
 }
-
-/* Caixa principal */
 .info {
     text-align: center;
     max-width: 400px;
 }
-
-/* Título */
 .info h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
     color: #ECF0F1;
 }
-
-/* Descrição */
 .info p {
     font-size: 1rem;
-    opacity: 0.8;
     margin-bottom: 25px;
 }
-
-/* Tabuleiro */
 .conteiner {
     width: 330px;
     height: 330px;
@@ -43,14 +37,12 @@ body {
     border-radius: 12px;
     box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
-
-/* Cada casa do jogo */
 .div2{
     width: 100px;
     height: 100px;
     border-radius: 8px;
     background-color: #ECF0F1;
-    color: #721a97;
+    color: #34495E;
     font-size: 55px;
     font-weight: bold;
     display: flex;
